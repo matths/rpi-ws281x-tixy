@@ -1,6 +1,4 @@
-import { performance } from 'perf_hooks';
 import ws281x from 'rpi-ws281x-native';
-import { init } from 'rpi-ws281x-native/lib/ws281x-native';
 
 const render = size => {
   const rev = i => i%32 < 16 ? i : Math.floor(i/32)*32+16 + 31 - (i%32);

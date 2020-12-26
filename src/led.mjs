@@ -2,6 +2,7 @@ import grb2rgb from './grb2rgb.mjs';
 import shadeToDark from './shade_to_dark.mjs';
 import limitValue from './limit_value.mjs';
 import tixy from './tixy.mjs';
+import { performance } from 'perf_hooks';
 
 const size = 16;
 
@@ -14,7 +15,7 @@ let transform = tixy[current];
 const emptyPixelData = Array(size*size).fill(0);
 
 const loop = () => {
-  const t = window.performance.now()/1000;
+  const t = performance.now()/1000;
   const pixelData = emptyPixelData.map((pv, i) => {
     const x = i%size;
     const y = Math.floor(i/size);
