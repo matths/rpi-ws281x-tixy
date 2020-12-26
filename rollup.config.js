@@ -21,6 +21,23 @@ const serve = () => ({
   }
 });
 
+const server = {
+	input: 'server/dummy.mjs',
+	output: {
+		file: 'server/dummy.js',
+		format: 'cjs'
+	},
+	plugins: [ 
+		resolve(), 
+		commonjs(),
+		!production && serve() 
+	],
+	watch: {
+		clearScreen: false
+	},
+	external: builtins 
+};
+
 const browser = {
   input: 'src/browser.mjs',
   output: {
@@ -34,7 +51,6 @@ const browser = {
       browser: true,
     }),
     commonjs(),
-    !production && serve(),
     !production && livereload({
       watch: 'build',
       verbose: true,
@@ -50,4 +66,4 @@ const browser = {
   }
 };
 
-export default [browser];
+export default [server, browser];
