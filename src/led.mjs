@@ -5,7 +5,7 @@ import tixy from './tixy.mjs';
 
 const size = 16;
 
-import createRenderer from './div_renderer.mjs';
+import createRenderer from './led_renderer.mjs';
 const render = createRenderer(size);
 
 let current = 2;

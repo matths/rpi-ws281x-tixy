@@ -18,6 +18,7 @@
   "repository": "github:matths/rpi-ws281x-tixy",
   "main": "index.js",
   "scripts": {
+    "led": "node src/led.mjs",
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "start": "node server/index.mjs",
@@ -28,7 +29,8 @@
     "@rollup/plugin-node-resolve": "^11.0.1",
     "rollup": "^2.35.1",
     "rollup-plugin-livereload": "^2.0.0",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "rpi-ws281x-native": "^0.10.1"
   },
   "dependencies": {
     "lnsr": "^1.0.0",

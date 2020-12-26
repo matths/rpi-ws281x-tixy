@@ -25,10 +25,11 @@ const render = className => {
   };
 };
 
-const createDivRenderer = (className, size) => {
+const createRenderer = (size, identifier) => {
+  const className = !identifier ? 'r1' : identifier ;
   addCssToHead(css(className));
   createElements(className, size)
   return render(className);
 };
 
-export default createDivRenderer;
+export default createRenderer;
