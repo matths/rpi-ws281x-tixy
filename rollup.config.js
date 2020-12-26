@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
+import nodePolyfills from 'rollup-plugin-node-polyfills';
 import builtins from 'builtin-modules'
 
 const production = !process.env.ROLLUP_WATCH;
@@ -47,6 +48,7 @@ const browser = {
     file: 'build/js/render.js'
   },
   plugins: [
+    nodePolyfills(),
     resolve({
       browser: true,
     }),

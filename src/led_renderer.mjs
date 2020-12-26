@@ -7,6 +7,7 @@ const render = size => {
   ws281x.setBrightness(100);
   ws281x.setIndexMapping(mapping.reverse());
 
+  console.log('Press <ctrl>+C to exit.');
   process.on('SIGINT', () => {
     ws281x.reset();
     process.nextTick(() => process.exit(0));

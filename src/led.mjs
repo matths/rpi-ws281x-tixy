@@ -3,6 +3,7 @@ import shadeToDark from './shade_to_dark.mjs';
 import limitValue from './limit_value.mjs';
 import tixy from './tixy.mjs';
 import { performance } from 'perf_hooks';
+import keyboard from './node_keyboard.mjs';
 
 const size = 16;
 
@@ -11,6 +12,14 @@ const render = createRenderer(size);
 
 let current = 2;
 let transform = tixy[current];
+keyboard.addListener('prev', e => {
+  current--; if (current<0) current = tixy.length - 1;
+  transform = tixy[current];
+});
+keyboard.addListener('next', e => {
+  current++; if (current>=tixy.length) current = 0;
+  transform = tixy[current];
+});
 
 const emptyPixelData = Array(size*size).fill(0);
 
@@ -28,6 +37,3 @@ const loop = () => {
 }
 
 setInterval(loop, 50);
-
-console.log('Press <ctrl>+C to exit.');
-
