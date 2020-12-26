@@ -12,7 +12,7 @@ const render = size => {
     process.nextTick(() => process.exit(0));
   });
 
-  return ws281x.render;
+  return ws281x.render.bind(ws281x);
 };
 
 const createRenderer = (size) => {
