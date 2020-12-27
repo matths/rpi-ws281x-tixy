@@ -20,7 +20,7 @@ const render = className => {
   const divs = collectionToArray(document.querySelectorAll('div.'+className+' > div'));
   return pixelData => {
     divs.forEach((div, i) => {
-      div.style.backgroundColor = '#'+pixelData[i].toString(16);
+      div.style.backgroundColor = '#'+(0x1000000 + pixelData[i]).toString(16).slice(1);
     });
   };
 };
