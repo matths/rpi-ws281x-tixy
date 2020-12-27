@@ -9,20 +9,25 @@ const size = 16;
 import createRenderer from './div_renderer.mjs';
 const render = createRenderer(size);
 
-let current = 2;
-let transform = tixy[current];
-keyboard.addListener('prev', e => {
-  current--; if (current<0) current = tixy.length - 1;
-  transform = tixy[current];
-});
-keyboard.addListener('next', e => {
-  current++; if (current>=tixy.length) current = 0;
-  transform = tixy[current];
-});
-
 const emptyPixelData = Array(size*size).fill(0);
 
+let current = 2;
+let transform = tixy[current];
+const change = d => {
+  current += d;
+  if (current<0) current = tixy.length - 1;
+  if (current>=tixy.length) current = 0;
+  transform = tixy[current];
+  render(emptyPixelData);
+}
+
+keyboard.addListener('prev', e => change(-1));
+keyboard.addListener('next', e => change(+1));
+
+let a = 0;
 const loop = () => {
+  a++;
+  if (a%75==0) change(1);
   const t = window.performance.now()/1000;
   const pixelData = emptyPixelData.map((pv, i) => {
     const x = i%size;
