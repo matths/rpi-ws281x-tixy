@@ -56,7 +56,9 @@ Immediately after a lot of people responded with a lot of creative functions, bu
 
 Luckily there's already a library [beyondscreen/node-rpi-ws281x-native] to render an array of 24bit per pixel values on a series of WS2812B LEDs, no matter if they are in a row or form a matrix. It's a node port/binding of [jgarff/rpi_ws281x] by @usefulthink.
 
-Thus we can use [index mapping] to match this tixy index parameter i to the correct LED. We also noticed, that the color values were recognized as GRB instead of RGB color values, so we tried to use the [beforeRender event] to switch green and red colors.
+If you want to know more about the inner working and how to address WS2812B LEDs, you could have a look at his [node-rpi-ws281x slides]
+
+Using the library we can use [index mapping] to match this tixy index parameter i to the correct LED. We also noticed, that the color values were recognized as GRB instead of RGB color values, so we tried to use the [beforeRender event] to switch green and red colors.
 And because we can't control LED light size, we introduced a transformation to create shades between white and black or red and black.
 
 ### Web renderer
@@ -117,6 +119,7 @@ To do this project on your own, you'll most probably need a subset or all of the
 [tixy.land]: https://www.tixy.land
 [initial tixy tweet]:https://twitter.com/aemkei/status/1323399877611708416
 [beyondscreen/node-rpi-ws281x-native]:https://github.com/beyondscreen/node-rpi-ws281x-native
+[node-rpi-ws281x slides]:https://de.slideshare.net/usefulthink/noderpiws281x
 [jgarff/rpi_ws281x]:https://github.com/jgarff/rpi_ws281x
 [index mapping]:https://github.com/beyondscreen/node-rpi-ws281x-native#index-mapping
 [beforeRender event]:https://github.com/beyondscreen/node-rpi-ws281x-native#events
