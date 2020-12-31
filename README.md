@@ -19,11 +19,11 @@ rpi-ws281x-tixy is a [tixy.land] renderer using a 16x16 WS2812B LED Matrix and a
 
 ![pi zero running tixy.land example on a led matrix](images/loop_led_640x360.gif "LED Renderer")
 
-Provided you hava a 16x16 WS2812B LED Matrix and a recent Raspberry PI or PI Zero, connect the three wires to the PI`s GPIO Pins like this:
+Provided you have a 16x16 WS2812B LED Matrix and a recent Raspberry PI or PI Zero, connect the three wires to the PI`s GPIO Pins like this:
 
 * Power or PWR (red) to Pin 2 (+5V)
 * Data IN or DIN (green) to Pin 12 (GPIO 18)
-* Ground or GND )white) to Pin 39
+* Ground or GND (white) to Pin 39
 
 ![schematic picture of WS2812B and PI wiring](images/rpi_ws2812b_led_wires.jpg "PI Zero Pins used")
 
@@ -65,7 +65,7 @@ And because we can't control LED light size, we introduced a transformation to c
 
 ![tixy function running in the browser using color shades instead of circle with different sizes](images/loop_web_640x360.gif "Web Renderer")
 
-If you want to play with this and don't want do all changes directly on your PI, we added a div based web renderer as well. We use esm modules and thus rollup to bundle it. You can play with it like this:
+If you want to play with this and don't want to do all changes directly on your PI, we added a div based web renderer as well. We use esm modules and thus rollup to bundle it. You can play with it like this:
 
 ```shell
 cd server/ssl; ./create.sh; cd ../..
@@ -77,12 +77,12 @@ npm run dev
 
 In current time you can easily order a flexible LED Panel Matrix with WS2812B LED at your favorite shopping platform directly from Shenzhen/China or Hong Kong. Ours came with 3 Pin JST-SM connectors, female for Data In (DIN) and male für Data Out (DOUT). So we needed to get a 3 Pin JST SM male connector and attach 3 single point female Dupont connectors to the other side to make a connection with the GPIO Pins from our PI Zero.
 
-Keep an eye on the cable cross section, to make your adapter work with both connector types. We used cables between AWG 22 (best for JST) and AWG 28 (best for Dupont).
+Keep an eye on the cable cross section to make your adapter work with both connector types. We used cables between AWG 22 (best for JST) and AWG 28 (best for Dupont).
 
 ![picture of led matrix, cable and plugs, pi zero, power supply](images/rpi_ws2812b_min_setup.jpg "Minimal setup")
 
-When you first buy a PI Zero be aware that the Pin Socket comes loose. So you need to solder it to the PI board. If soldering isn't yours, your can order a so called GPIO Hammer Header which doesn't need soldering.
-On the other hand the PI Zero is often sold bundled with a colorful Pin Socket which matches the legend provided, whichs helps a lot to identify the needed Pins.
+When you first buy a PI Zero be aware that the Pin Socket comes loose. So you need to solder it to the PI board. If soldering isn't yours, you can order a so called GPIO Hammer Header which doesn't need soldering.
+On the other hand the PI Zero is often sold bundled with a colorful Pin Socket which matches the legend provided, which helps a lot to identify the needed Pins.
 
 ![Raspberry PI GPIO description](images/rpi_gpio_pin_layout.jpg "GPIO Pins legend")
 
