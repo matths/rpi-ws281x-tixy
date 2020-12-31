@@ -40,7 +40,7 @@ const server = {
 };
 
 const browser = {
-  input: 'src/browser.mjs',
+  input: 'src/web.mjs',
   output: {
     sourcemap: true, 
     format: 'iife',

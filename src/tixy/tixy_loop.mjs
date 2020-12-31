@@ -1,6 +1,6 @@
-import grb2rgb from './grb2rgb.mjs';
-import shadeToDark from './shade_to_dark.mjs';
-import limitValue from './limit_value.mjs';
+import grb2rgb from '../utils/grb2rgb.mjs';
+import shadeToDark from '../utils/shade_to_dark.mjs';
+import limitValue from '../utils/limit_value.mjs';
 import tixy from './tixy.mjs';
 
 const tixyLoop = (createRenderer, now, keyboard, colorShift) => {

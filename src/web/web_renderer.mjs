@@ -1,7 +1,7 @@
 import css from './css.mjs';
 import addCssToHead from './add_css_to_head.mjs';
 import collectionToArray from './collection_to_array.mjs';
-import indexArrayOfLength from './index_array_of_length.mjs';
+import indexArrayOfLength from '../utils/index_array_of_length.mjs';
 
 const createElements = (className, size) => {
   const container = document.createElement('div');
