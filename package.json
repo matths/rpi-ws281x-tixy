@@ -34,6 +34,7 @@
     "rpi-ws281x-native": "^0.10.1"
   },
   "dependencies": {
+    "decode-ico": "^0.4.0",
     "lnsr": "^1.0.0",
     "sirv-cli": "^1.0.10"
   }
