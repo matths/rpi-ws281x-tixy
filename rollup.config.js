@@ -2,6 +2,7 @@ import fs from 'fs';
 import childProcess from 'child_process';
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
+import json from '@rollup/plugin-json';
 import livereload from 'rollup-plugin-livereload';
 import { terser } from 'rollup-plugin-terser';
 import nodePolyfills from 'rollup-plugin-node-polyfills';
@@ -40,7 +41,7 @@ const server = {
 };
 
 const browser = {
-  input: 'src/web.mjs',
+  input: 'src/web_font.mjs',
   output: {
     sourcemap: true, 
     format: 'iife',
@@ -48,6 +49,7 @@ const browser = {
     file: 'build/js/render.js'
   },
   plugins: [
+    json(),
     nodePolyfills(),
     resolve({
       browser: true,
