@@ -3,7 +3,7 @@ import letterSlice from './letter_slice.mjs';
 import objectMap from '../utils/object_map.mjs';
 import indexArrayOfLength from '../utils/index_array_of_length.mjs';
 
-const bmf2 = (createRenderer, now, font, message) => {
+const bfm2 = (createRenderer, now, font, message) => {
 
   const fontSliced = objectMap(
     font,
@@ -63,4 +63,4 @@ const bmf2 = (createRenderer, now, font, message) => {
   setInterval(loop, 50);
 }
 
-export default bmf2;
+export default bfm2;

@@ -1,8 +1,8 @@
 import createRenderer from './web/web_renderer.mjs';
-import bmf2 from './bmf2/bmf2.mjs';
-import { fontC64esque } from './bmf2/fonts_web.mjs';
+import bfm2 from './bfm2/bfm2.mjs';
+import { fontC64esque } from './bfm2/fonts_web.mjs';
 
-bmf2(
+bfm2(
   createRenderer,
   () => window.performance.now(),
   fontC64esque,
